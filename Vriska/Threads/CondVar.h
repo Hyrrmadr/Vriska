@@ -6,6 +6,11 @@
 # include <Vriska/Threads/INativeCondVar.h>
 # include <Vriska/Threads/Mutex.h>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4275 )
+#endif
+
 namespace Vriska
 {
   class VRISKA_EXPORT CondVar : public ILockable

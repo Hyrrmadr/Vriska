@@ -5,6 +5,11 @@
 # include <Vriska/Threads/ILockable.h>
 # include <Vriska/Threads/INativeMutex.h>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4275 )
+#endif
+
 namespace Vriska
 {
   class VRISKA_EXPORT Mutex : public ILockable
@@ -29,5 +34,9 @@ namespace Vriska
     INativeMutex&	_mutex;
   };
 }
+
+#ifdef VRISKA_WINDOWS
+# pragma warning( pop )
+#endif
 
 #endif // !VRISKA_LIB_THREADS_MUTEX_H_

@@ -13,6 +13,11 @@
 # include <string>
 # include <sstream>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4251 )
+#endif
+
 namespace Vriska
 {
   class VRISKA_EXPORT Time
@@ -74,5 +79,9 @@ namespace Vriska
 
   VRISKA_EXPORT std::ostream&	operator<<(std::ostream& os, Time const & t);
 }
+
+#ifdef VRISKA_WINDOWS
+# pragma warning( pop )
+#endif
 
 #endif // !VRISKA_LIB_CORE_TIME_H_
