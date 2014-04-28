@@ -7,6 +7,12 @@
 # include <Vriska/Network/Loggers.h>
 # include <Vriska/Network/ICallable.h>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4251 )
+# pragma warning( disable : 4275 )
+#endif
+
 namespace Vriska
 {
   class VRISKA_EXPORT Client : public SimpleClient
@@ -115,5 +121,9 @@ namespace Vriska
     Function		_funcTime;
   };
 }
+
+#ifdef VRISKA_WINDOWS
+# pragma warning( pop )
+#endif
 
 #endif // !VRISKA_LIB_NETWORK_CLIENT_H_

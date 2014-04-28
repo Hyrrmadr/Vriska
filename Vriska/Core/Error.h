@@ -5,6 +5,11 @@
 # include <Vriska/Core/OS.h>
 # include <string>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4251 )
+#endif
+
 namespace Vriska
 {
 
@@ -37,5 +42,9 @@ namespace Vriska
 			static std::string	_messages[];
 	};
 }
+
+#ifdef VRISKA_WINDOWS
+# pragma warning( pop )
+#endif
 
 #endif // !VRISKA_LIB_CORE_ERROR_H_

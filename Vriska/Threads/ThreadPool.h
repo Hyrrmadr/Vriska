@@ -9,6 +9,12 @@
 # include <Vriska/Threads/ScopedLock.h>
 # include <vector>
 
+#ifdef VRISKA_WINDOWS
+# pragma warning( push )
+# pragma warning( disable : 4251 )
+# pragma warning( disable : 4275 )
+#endif
+
 namespace Vriska
 {
   class VRISKA_EXPORT ThreadPool : public IRunnable
@@ -32,5 +38,9 @@ namespace Vriska
     std::vector<Thread*>	_pool;
   };
 }
+
+#ifdef VRISKA_WINDOWS
+# pragma warning( pop )
+#endif
 
 #endif // !VRISKA_LIB_THREADS_THREADPOOL_H_
