@@ -1,7 +1,7 @@
 Vriska
 ======
 
-A simple thread and network cross-plateform library written in C++.
+A simple thread and network cross-platform library written in C++.
 
 
 License
